@@ -69,12 +69,10 @@ namespace N_m3u8DL_RE
 
         static async Task DoWorkAsync(MyOption option)
         {
-            
+            //移除检查重定向
             if (Console.IsOutputRedirected || Console.IsErrorRedirected)
             {
-                option.ForceAnsiConsole = true;
-                option.NoAnsiColor = true;
-                Logger.Info(ResString.consoleRedirected);
+               
             }
             CustomAnsiConsole.InitConsole(option.ForceAnsiConsole, option.NoAnsiColor);
             //检测更新
